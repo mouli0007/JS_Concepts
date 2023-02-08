@@ -35,3 +35,31 @@ for (let o in obj) {
 }
 
 // We cant use for of in object !
+
+// WHEN TO USE FOR OFF
+
+// Await in differnt way !
+
+const ids = [1, 2, 3, 4, 5];
+
+const fet = async (id) => {
+  const response = await fetch(
+    `https://jsonplaceholder.typicode.com/todos/${id}`
+  );
+  const data = await response.json();
+  return data;
+};
+
+const useEach = async (ids) => {
+  // ids.map(async (id) => {
+  //   const data = await fet(id);
+  //   console.log(data);
+  // });
+
+  for (let id of ids) {
+    const data = await fet(id);
+    console.log(data);
+  }
+};
+
+useEach(ids);
