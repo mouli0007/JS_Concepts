@@ -1,65 +1,50 @@
-//  For Of Loop ! and For-in-Loop
+// For of loop
+// Lops through values of iterable object
+// strings,array,map,set
 
-// Both for...in and for...of statements iterate over something. The main difference between them is in what they iterate over. The for...in statement iterates over the enumerable string properties of an object, while the for...of statement iterates over values that the iterable object defines to be iterated over.
+// ##################
+// Unlike forEach we can use break,continue
 
-// For Of Loop !
-//  it fill fetch the values
+const fruits = ['apple', 'orange', 'banna', 'peach'];
+const longName = 'John smith Pepper 3';
 
-let num = [1, 2, 3, 4, 5];
+let shortName = '';
 
-for (let i of num) {
-  if (i !== undefined) {
-    console.log(i);
+for (const letter of longName) {
+  if (letter !== ' ') {
+    shortName += letter;
+  }
+}
+console.log(shortName);
+
+let fr__ = [];
+for (const fr of fruits) {
+  if (fr !== 'orange') {
+    fr__.push(fr);
+    console.log(fr__);
   }
 }
 
-// For in loop
-//  it fill fetch the key  and with that you can get the values
+// For In Loop !
 
-for (let i in num) {
-  if (i !== undefined) {
-    console.log(num[i]);
-  }
-}
+// For of loop
+// specially to iterate over object Keys || properties !
+// on arrays use ofr of loop !
 
-// Object Example !
-
-const obj = {
-  name: 'Mouli VJ',
+const person = {
+  name: 'Mouli  VJ',
   age: 25,
-  job: 'Front-endd-developer !',
+  status: 'student',
 };
 
-for (let o in obj) {
-  console.log(obj[o]);
-}
-
-// We cant use for of in object !
-
-// WHEN TO USE FOR OFF
-
-// Await in differnt way !
-
-const ids = [1, 2, 3, 4, 5];
-
-const fet = async (id) => {
-  const response = await fetch(
-    `https://jsonplaceholder.typicode.com/todos/${id}`
-  );
-  const data = await response.json();
-  return data;
+const another_person = {
+  name: 'Sina ',
+  status: 'Devops ENGG',
+  avail: 'ShortGun ! ',
 };
 
-const useEach = async (ids) => {
-  // ids.map(async (id) => {
-  //   const data = await fet(id);
-  //   console.log(data);
-  // });
-
-  for (let id of ids) {
-    const data = await fet(id);
-    console.log(data);
+for (let i in person) {
+  if (another_person[i]) {
+    console.log(another_person[i]);
   }
-};
-
-useEach(ids);
+}
