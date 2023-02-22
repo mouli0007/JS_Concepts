@@ -1,5 +1,5 @@
 // For of loop
-// Lops through values of iterable object
+// Loops through values of iterable object
 // strings,array,map,set
 
 // ##################
@@ -27,7 +27,6 @@ for (const fr of fruits) {
 
 // For In Loop !
 
-// For of loop
 // specially to iterate over object Keys || properties !
 // on arrays use ofr of loop !
 
